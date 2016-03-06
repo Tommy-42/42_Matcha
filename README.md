@@ -19,15 +19,14 @@ Si vous avez besoin d’inspiration, on suggérera, pour les principaux language
 * Spark pour Java
 * Crow pour C++
 
-<br>
 Vous êtes libre d’utiliser le serveur web de votre choix, que ce soit Apache, Nginx ou
-même un built-in web server.<br>
+même un built-in web server.<br><br>
 L’ensemble de votre application devra être au minimum compatible sur Firefox (>=
-41) et Chrome (>= 46). <br>
+41) et Chrome (>= 46). <br><br>
 Votre site doit avoir une mise en page décente : c’est à dire au moins un header, une
-section principale et un footer. <br>
+section principale et un footer. <br><br>
 Votre site devra être présentable sur mobile, et garder une mise en page acceptable
-sur de petites résolutions.<br>
+sur de petites résolutions.<br><br>
 Tous vos formulaires doivent avoir des validations correctes, et l’ensemble de votre
 site devra être sécurisé. Ce point est obligatoire et sera vérifié longuement en soutenance.
 Pour vous faire une petite idée, voici quelques éléments qui ne sont pas considérés comme
@@ -38,7 +37,6 @@ sécurisés :<br>
 * Pouvoir uploader du contenu indésirable
 * Pouvoir modifier une requête SQL
 
-<br>
 ## Résumé
 Vous devrez donc concevoir une application permettant à deux potentielles âmes soeurs de se rencontrer, de l’inscription au contact final.
 <br>
