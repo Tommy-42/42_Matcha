@@ -1,0 +1,23 @@
+{
+  "name": "42_Matcha",
+  "description": "Projet Matcha | Projet Web | Tier 2 | Ecole 42",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "express-session": "*",
+    "express-myconnection": "*",
+    "jade": "*",
+    "morgan": "*",
+    "serve-favicon": "*",
+    "jquery": "*",
+    "bootstrap": "*",
+    "mysql": "*"
+  }
+}
