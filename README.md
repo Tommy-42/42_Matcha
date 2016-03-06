@@ -1,7 +1,7 @@
 # Camagru
 ## Projet Matcha | Projet Web | Tier 2 | Ecole 42
 ### Consigne:<br>
-*Pour ce projet, vous êtes libres d’utiliser le langage de votre choix.<br>
+Pour ce projet, vous êtes libres d’utiliser le langage de votre choix.<br>
 Vous pouvez utiliser un micro-framework, et toutes les librairies du monde pour ce
 projet.<br>
 On considerera qu’un “micro-framework” a un routeur, et éventuellement du templating,
@@ -35,7 +35,6 @@ sécurisés :<br>
 protégées.
 	* Pouvoir uploader du contenu indésirable.
 	* Pouvoir modifier une requête SQL.
-*
 
 ## Résumé
 Vous devrez donc concevoir une application permettant à deux potentielles âmes soeurs de se rencontrer, de l’inscription au contact final.
