@@ -32,11 +32,12 @@ Tous vos formulaires doivent avoir des validations correctes, et l’ensemble de
 site devra être sécurisé. Ce point est obligatoire et sera vérifié longuement en soutenance.
 Pour vous faire une petite idée, voici quelques éléments qui ne sont pas considérés comme
 sécurisés :<br>
-	* Avoir des mots de passe “en clair” dans une base de données.
-	* Pouvoir injecter du code HTML ou JavaScript “utilisateur” dans des variables mal
-protégées.
-	* Pouvoir uploader du contenu indésirable.
-	* Pouvoir modifier une requête SQL.
+
+* Avoir des mots de passe “en clair” dans une base de données.
+* Pouvoir injecter du code HTML ou JavaScript “utilisateur” dans des variables mal protégées.
+
+* Pouvoir uploader du contenu indésirable.
+* Pouvoir modifier une requête SQL.
 
 ## Résumé
 Vous devrez donc concevoir une application permettant à deux potentielles âmes soeurs de se rencontrer, de l’inscription au contact final.
