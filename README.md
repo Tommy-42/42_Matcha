@@ -35,7 +35,6 @@ sécurisés :<br>
 
 * Avoir des mots de passe “en clair” dans une base de données.
 * Pouvoir injecter du code HTML ou JavaScript “utilisateur” dans des variables mal protégées.
-
 * Pouvoir uploader du contenu indésirable.
 * Pouvoir modifier une requête SQL.
 
