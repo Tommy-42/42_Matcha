@@ -40,4 +40,3 @@ sécurisés :<br>
 ## Résumé
 Vous devrez donc concevoir une application permettant à deux potentielles âmes soeurs de se rencontrer, de l’inscription au contact final.
 <br>
-Une partie Galerie des montages avec Commentaires et Likes possible des membres.
