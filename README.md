@@ -1,4 +1,4 @@
-# Camagru
+# Matcha
 ## Projet Matcha | Projet Web | Tier 2 | Ecole 42
 ### Consigne:<br>
 Pour ce projet, vous êtes libres d’utiliser le langage de votre choix.<br>
