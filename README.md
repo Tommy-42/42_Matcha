@@ -10,7 +10,7 @@ vous respectez ces contraintes, vous êtes libre d’utiliser celui qui vous pla
 Si vous avez besoin d’inspiration, on suggérera, pour les principaux languages :<br>
 
 * Sinatra pour Ruby
-* Express pour Node (oui, nous le considérons comme un micro-framework)
+* Express pour Node ("oui, nous le considérons comme un micro-framework")
 * Flask pour Python
 * Scalatra pour Scala
 * Slim pour PHP (Silex n’est pas autorisé en raison de l’intégration de Doctrine)
