@@ -13,7 +13,7 @@ Si vous avez besoin d’inspiration, on suggérera, pour les principaux language
 * Express pour Node ("oui, nous le considérons comme un micro-framework")
 * Flask pour Python
 * Scalatra pour Scala
-* Slim pour PHP (Silex n’est pas autorisé en raison de l’intégration de Doctrine)
+* Slim pour PHP ("Silex n’est pas autorisé en raison de l’intégration de Doctrine")
 * Nickel pour Rust
 * Goji pour Golang
 * Spark pour Java
