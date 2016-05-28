@@ -24,8 +24,8 @@ var mysql = require('mysql');
 var connection = require('express-myconnection'); 
 
 // view engine setup
+app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -42,7 +42,7 @@ app.use(connection(mysql, {
     host: 'localhost',
     user: 'matcha',
     password : 'toto42',
-    port : 3306, //port mysql
+    port : 3342, //port mysql
     database:'matcha'
 }, 'request'));
 

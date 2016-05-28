@@ -1,13 +1,11 @@
 $( document ).ready(function() {
 
-  $('#inputUsername').on('focusout', function(e) {
+  $('.inputUserValidation').on('focusout', function(e) {
     var $save = $(this);
-    console.log($(this).attr("name"));
     var obj = {
       name: $(this).attr('name'),
       value: $(this).val()
     };
-    console.log( obj );
     $.ajax({
       url: "/validate/user/new",
       type: 'GET',
@@ -17,15 +15,24 @@ $( document ).ready(function() {
       dataType: 'json',
       success: function(data, textStatus, jqXHR) {
         console.log( data );
-        if( data.error.length ) {
-          $save.popover({
-            content: data.error,
+        $save.popover({
+            content: "",
             placement: "bottom",
-            title: "Error"
+            title: "",
+            html: false
+        });
+        $save.popover('dispose');
+        if( data.error.length ) {
+          var content = "";
+          $.each(data.error, function(key, val) {
+            content += val + '<br>';
+          });
+          $save.popover({
+            content: content,
+            placement: "bottom",
+            title: "Error",
+            html: true
           }).popover('show');
-        }
-        else {
-          $save.popover('destroy');
         }
       },
       error: function(data, textStatus, jqXHR) {

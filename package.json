@@ -8,17 +8,18 @@
   },
   "dependencies": {
     "body-parser": "*",
+    "bootstrap": "*",
     "cookie-parser": "*",
     "debug": "*",
     "express": "*",
-    "express-session": "*",
     "express-myconnection": "*",
-    "jade": "*",
-    "morgan": "*",
-    "serve-favicon": "*",
+    "express-session": "*",
     "jquery": "*",
-    "bootstrap": "*",
+    "moment": "*",
+    "morgan": "*",
     "mysql": "*",
-    "moment": "*"
+    "pug": "^2.0.0-alpha6",
+    "pug-loader": "*",
+    "serve-favicon": "*"
   }
 }

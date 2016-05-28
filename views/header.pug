@@ -1,0 +1,33 @@
+nav.navbar.navbar-fixed-top.header-design
+  div.container
+    div.navbar-header
+      button(type="button" data-toggle="collapse" data-target="#navbar-header" aria-expanded="false" aria-controls="navbar").navbar-toggler.hidden-sm-up &#9776;
+      a(href="/").navbar-brand Matcha
+    div#navbar-header.collapse.navbar-toggleable-xs
+      if authorised
+        ul.nav.navbar-nav
+          li.nav-item.active
+            a(href="/" class="nav-link") Home
+          li.nav-item
+            a(href="/" class="nav-link") Home
+          li.nav-item.dropdown
+            a(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false").dropdown-toggle Dropdown
+              span.caret
+            ul.dropdown-menu
+              li.nav-item
+                a(href="/" class="nav-link") Action
+              li.nav-item(role="separator").divider
+              li.nav-item
+                a(href="/" class="nav-link") Other Action
+              li.nav-item(role="separator").divider
+              li.nav-item
+                a(href="/" class="nav-link") Something
+      else
+        form.form-inline.pull-xs-right
+          div.form-group
+            input(type="text" placeholder="Email").form-control
+          div.form-group
+            input(type="password" placeholder="Password").form-control
+          button(type="submit")#sign-in-button.btn.btn-success Sign in
+          a(href="/users/new")#sign-up-button.btn.btn-primary Sign up
+  hr.hr-separator

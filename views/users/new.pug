@@ -1,0 +1,38 @@
+extends ../layout.pug
+
+block append stylesheet
+
+block content
+  h1.text-center Create a new account
+  div.row
+    div.col-xs-12.col-sm-6.col-sm-offset-3
+      form
+        div.form-group
+          label(for="inputUsername") Username
+          input(type="text" name="username")#inputUsername.inputUserValidation.form-control
+        div.form-group
+          label(for="inputBirthDay") Birthday
+          input(
+            type="date"
+            name="birthday"
+            min="#{moment().subtract(142, 'years').format('YYYY-MM-DD')}"
+            max="#{moment().subtract(18, 'years').format('YYYY-MM-DD')}"
+            value="#{moment().subtract(18, 'years').format('YYYY-MM-DD')}"
+          )#inputBirthDay.inputUserValidation.form-control
+        div.form-group
+          label(for="inputSexType") Gender
+          select(type="text" name="gender")#inputGender.inputUserValidation.form-control
+            option(value="0") Male
+            option(value="1") Female
+        div.form-group
+          label(for="inputEmail") Email
+          input(type="text" name="email")#inputEmail.inputUserValidation.form-control
+        div.form-group
+          label(for="inputPassword") Password
+          input(type="password" name="password")#inputPassword.inputUserValidation.form-control
+        div.form-group
+          label(for="inputConfirmPassword") Confirm-Password
+          input(type="password" name="confirm_password")#inputConfirmPassword.form-control
+
+block append javascript
+  script(src='/javascripts/users/new.js')
