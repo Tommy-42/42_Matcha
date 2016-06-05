@@ -3,4 +3,3 @@ data/*
 logs
 LAUNCH
 node_modules/
-bin/
