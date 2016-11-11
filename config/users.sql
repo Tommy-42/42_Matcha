@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2016 at 11:03 AM
+-- Generation Time: Nov 11, 2016 at 01:05 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.0
 
@@ -28,14 +28,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL,
-  `username` varchar(21) NOT NULL,
   `email` varchar(256) NOT NULL,
+  `username` varchar(21) NOT NULL,
+  `password` varchar(256) NOT NULL,
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
   `birthdate` date NOT NULL,
-  `gender` tinyint(1) NOT NULL,
-  `password` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `gender` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
 -- Indexes for dumped tables
@@ -45,8 +45,7 @@ CREATE TABLE `users` (
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
