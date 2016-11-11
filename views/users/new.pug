@@ -6,7 +6,7 @@ block content
   h1.text-center Create a new account
   div.row
     div.col-xs-12.col-sm-6.col-sm-offset-3
-      form
+      form#registerForm
         div.form-group
           label(for="inputUsername") Username
           input(type="text" name="username")#inputUsername.inputUserValidation.form-control
@@ -31,8 +31,12 @@ block content
           label(for="inputPassword") Password
           input(type="password" name="password")#inputPassword.inputUserValidation.form-control
         div.form-group
-          label(for="inputConfirmPassword") Confirm-Password
-          input(type="password" name="confirm_password")#inputConfirmPassword.form-control
+          label(for="inputConfirmPassword") Confirm_Password
+          input(type="password" name="confirm_password")#inputConfirmPassword.inputUserValidation.form-control
+        div.form-group
+          label(for="inputSubmit")
+          input(type="button" name="submit" value="Submit")#inputSubmit.btn.btn-primary
 
 block append javascript
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js')
   script(src='/javascripts/users/new.js')

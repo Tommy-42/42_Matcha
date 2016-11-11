@@ -20,5 +20,10 @@ router.get('/', checkAuth, function(req, res, next) {
 router.get('/new', checkAuth, function(req, res, next) {
   res.render('users/new', { title: 'New User', authorized: req.checkAuth });
 });
+/* POST users creation. */
+router.post('/new', checkAuth, function(req, res, next) {
+  
+  res.render('users/new', { title: 'New User', authorized: req.checkAuth });
+});
 
 module.exports = router;
