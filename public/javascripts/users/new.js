@@ -179,12 +179,14 @@ $( document ).ready(function() {
       return;
     }
 
+    var dataForm = {};
+    $.each($('#registerForm').serializeArray(), function(i, field) {
+        dataForm[field.name] = field.value;
+    });
     $.ajax({
       url: "/users/new",
       type: 'POST',
-      data: {
-        data: $('#registerForm').serialize()      
-      },
+      data: dataForm,
       dataType: 'json',
       success: function(data, textStatus, jqXHR) {
         console.log( data );     

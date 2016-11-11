@@ -25,6 +25,7 @@ var connection = require('express-myconnection');
 // view engine setup
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
+app.locals.moment = require('moment');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -35,7 +36,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session);
 
-app.locals.moment = require('moment');
 
 app.use(connection(mysql, {
     host: 'localhost',

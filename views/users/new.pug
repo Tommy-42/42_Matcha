@@ -15,9 +15,9 @@ block content
           input(
             type="date"
             name="birthday"
-            min="#{moment().subtract(142, 'years').format('YYYY-MM-DD')}"
-            max="#{moment().subtract(18, 'years').format('YYYY-MM-DD')}"
-            value="#{moment().subtract(18, 'years').format('YYYY-MM-DD')}"
+            min=moment().subtract(142, 'years').format('YYYY-MM-DD')
+            max=moment().subtract(18, 'years').format('YYYY-MM-DD')
+            value=moment().subtract(18, 'years').format('YYYY-MM-DD')
           )#inputBirthDay.inputUserValidation.form-control
         div.form-group
           label(for="inputSexType") Gender
