@@ -14,9 +14,8 @@ var session = require("express-session")({
     resave: true,
     saveUninitialized: true
 });
-var routes = require('./routes/index');
+var root = require('./routes/index');
 var users = require('./routes/users');
-var validate = require('./routes/validate');
 
 var app = express();
 
@@ -47,9 +46,8 @@ app.use(connection(mysql, {
 }, 'request'));
 
 //app.use();
-app.use('/', routes);
+app.use('/', root);
 app.use('/users', users);
-app.use('/validate/', validate);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

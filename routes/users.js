@@ -22,7 +22,9 @@ router.get('/new', checkAuth, function(req, res, next) {
 });
 /* POST users creation. */
 router.post('/new', checkAuth, function(req, res, next) {
-  
+
+  var obj = req.body
+  console.log(obj);
   res.render('users/new', { title: 'New User', authorized: req.checkAuth });
 });
 

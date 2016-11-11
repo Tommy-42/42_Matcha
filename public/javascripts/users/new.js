@@ -180,10 +180,10 @@ $( document ).ready(function() {
     }
 
     $.ajax({
-      url: "/validate/user/new",
+      url: "/users/new",
       type: 'POST',
       data: {
-        data: $('#registerForm').serialize();        
+        data: $('#registerForm').serialize()      
       },
       dataType: 'json',
       success: function(data, textStatus, jqXHR) {
