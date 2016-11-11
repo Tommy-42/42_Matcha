@@ -42,7 +42,7 @@ app.use(connection(mysql, {
     host: 'localhost',
     user: 'matcha',
     password : 'toto42',
-    port : 3342, //port mysql
+    port : 3306, //port mysql
     database:'matcha'
 }, 'request'));
 
