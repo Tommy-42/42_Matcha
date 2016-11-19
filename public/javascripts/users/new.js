@@ -176,25 +176,9 @@ $( document ).ready(function() {
       setTimeout(function () {
         $save.popover('hide');
       }, 2500);
+      e.preventDefault();
       return;
     }
-
-    var dataForm = {};
-    $.each($('#registerForm').serializeArray(), function(i, field) {
-        dataForm[field.name] = field.value;
-    });
-    $.ajax({
-      url: "/users/new",
-      type: 'POST',
-      data: dataForm,
-      dataType: 'json',
-      success: function(data, textStatus, jqXHR) {
-        console.log( data );     
-      },
-      error: function(data, textStatus, jqXHR) {
-        console.log(data.responseText);
-      }
-    });
   });
 
 });

@@ -3,10 +3,13 @@ extends ../layout.pug
 block append stylesheet
 
 block content
-  h1.text-center Create a new account
   div.row
+    div.col-xs-12.text-xs-center
+      h1 Create a new account
+      p= msg
+      p= msg_detailed
     div.col-xs-12.col-sm-6.col-sm-offset-3
-      form#registerForm
+      form(method="POST" action="/user/new")#registerForm
         div.form-group
           label(for="inputUsername") Username
           input(type="text" name="username")#inputUsername.inputUserValidation.form-control
@@ -35,7 +38,7 @@ block content
           input(type="password" name="confirm_password")#inputConfirmPassword.inputUserValidation.form-control
         div.form-group
           label(for="inputSubmit")
-          input(type="button" name="submit" value="Submit")#inputSubmit.btn.btn-primary
+          input(type="submit" name="submit" value="Submit")#inputSubmit.btn.btn-primary
 
 block append javascript
   script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js')
