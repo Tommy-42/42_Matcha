@@ -18,9 +18,6 @@ var routes = require('./routes/routes');
 
 var app = express();
 
-var mysql = require('mysql');
-var connection = require('express-myconnection'); 
-
 // view engine setup
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
@@ -34,15 +31,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session);
-
-
-app.use(connection(mysql, {
-    host: 'localhost',
-    user: 'matcha',
-    password : 'toto42',
-    port : 3307, //port mysql
-    database:'matcha'
-}, 'request'));
 
 //app.use();
 app.use('/', routes);

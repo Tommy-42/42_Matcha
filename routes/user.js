@@ -1,57 +1,46 @@
 "use strict";
-var validator = require('../lib/validator.js')
+var vld = require('../lib/userValidator.js');
+var dbuser = require('../lib/dbUser.js');
 
 exports.register = function( req, res) {
 
-  /*
-  {
-    username: 'test',
-    birthday: '1998-11-19',
-    gender: '0',
-    email: 'test@test.fr',
-    password: 'test',
-    confirm_password: 'test',
-    submit: 'Submit'
-  }
-  */
-
   var user = req.body;
+  var error = [];
 
-  user.email.isValidEmail();
+  console.log(user);
 
-  req.getConnection(function(err,connection) {
-      connection.query('SELECT * FROM users WHERE username = ?',[user.email],function(err,rows) {
-        if(err)
-          console.log("Error Selecting : %s ",err );
-        else {
-          error = rows.length == 1 ? true : false;
-          if( error ) {
-            res.send('users/new', {
-              authorized: req.checkAuth,
-              error: "The Username is already taken"
-            });
-          }
-          else
-            res.send('users/new', { error: error, authorized: req.checkAuth });
-        }
-      });
+  error.push( vld.isValidUsername(user.username) );
+  error.push( vld.isValidBirthdate(user.birthday) );
+  error.push( (user.gender == 0 ? null : user.gender == 1 ? null : ["Error Bad Gender"]) );
+  error.push( vld.isValidEmail(user.email) );
+  if( vld.isSamePassword(user.password, user.confirm_password) )
+    error.push( vld.isValidPassword(user.password) );
+  error = error.filter(function(v){if(v && v !== null) { return v.length > 0; }else{return false;}});
+
+  if( error.length == 0 )
+  {
+    var row = dbuser.select.emailExist(user.email);
+    if( row === -1 )
+      error.push("An error occured please try again");
+    else if ( row === 1 )
+      error.push("The choosen email address is already taken");
+  }
+
+  if( error.length > 0 ) {
+    res.status(400).render('user/new', { 
+      title: 'Error registration',
+      authorized: req.checkAuth,
+      msg: 'Ho ? Something\'s wrong !',
+      msg_detailed: 'Error: ' + error
     });
-
-
-  if( 1 == 2  ) {
+  }
+  else {
+    dbuser.insert.newUser(user);
     res.status(200).render('user/success', { 
       title: 'Successful registration',
       authorized: req.checkAuth,
       msg: 'Good Job !',
       msg_detailed: 'Your account have been successfully registered, you must validate your email now.'
     });
-  }
-  else {
-    res.status(400).render('user/new', { 
-      title: 'Error registration',
-      authorized: req.checkAuth,
-      msg: 'Ho ? Something\'s wrong !',
-      msg_detailed: 'Error: '
-    }); 
   }
 }

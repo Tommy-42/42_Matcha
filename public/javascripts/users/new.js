@@ -53,7 +53,7 @@ $( document ).ready(function() {
         }
         return;
       case "birthday":
-        var error = checkDate(obj.value);
+        var error = checkBirthDate(obj.value);
         $save.popover({
             content: "",
             placement: "bottom",
@@ -203,7 +203,7 @@ function checkUsername(username) {
     error.push("The Username can only contains '-', '_', alpha-num.");
   return error;
 }
-function checkDate(date) {
+function checkBirthDate(date) {
 
   var error = [];
   // take today's date and substract 18 years
