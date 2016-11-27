@@ -21,6 +21,8 @@
     "pug": "^2.0.0-alpha6",
     "pug-loader": "*",
     "serve-favicon": "*",
-    "bcryptjs": "*"
+    "bcryptjs": "*",
+    "geoip-lite": "1.1.8",
+    "ip": "1.1.4"
   }
 }
