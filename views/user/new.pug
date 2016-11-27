@@ -8,8 +8,8 @@ block content
       h1 Create a new account
       p= msg
       p= msg_detailed
-    div.col-xs-12.col-sm-6.col-sm-offset-3
-      form(method="POST" action="/user/new")#registerForm
+    div.col-xs-12
+      form(method="POST" action="/user/new")#registerForm.max-width-350.mx-auto
         div.form-group
           label(for="inputUsername") Username
           input(type="text" name="username")#inputUsername.inputUserValidation.form-control

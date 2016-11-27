@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block append stylesheet
+
+block content
+  div.row
+    div.col-xs-12.text-xs-center
+      h1 Log me In please ! 
+      p= msg
+      p= msg_detailed
+    div.col-xs-12
+      form(method="POST" action="/user/login")#registerForm.max-width-350.mx-auto
+        div.form-group
+          label(for="inputEmail") Email
+          input(type="text" name="email")#inputEmail.inputUserValidation.form-control
+        div.form-group
+          label(for="inputPassword") Password
+          input(type="password" name="password")#inputPassword.form-control
+        div.form-group
+          label(for="inputSubmit")
+          input(type="submit" name="submit" value="Submit")#inputSubmit.btn.btn-primary
+
+block append javascript
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js')
+  script(src='/javascripts/users/new.js')

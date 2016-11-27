@@ -11,5 +11,8 @@ exports.user = {
 
 	register: function( req, res) {
 		res.render('user/new', { title: 'New User', authorized: req.checkAuth });
-	}
+  },
+  login: function( req, res ) {
+    res.render('user/login', { title: 'Matcha Login', authorized: req.checkAuth });
+  }
 }

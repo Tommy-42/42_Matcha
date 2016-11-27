@@ -23,11 +23,10 @@ nav.navbar.navbar-fixed-top.header-design
               li.nav-item
                 a(href="/" class="nav-link") Something
       else
-        form.form-inline.pull-xs-right
-          div.form-group
-            input(type="text" placeholder="Email").form-control
-          div.form-group
-            input(type="password" placeholder="Password").form-control
-          button(type="submit")#sign-in-button.btn.btn-success Sign in
-          a(href="/user/new")#sign-up-button.btn.btn-primary Sign up
+        div.d-inline-block.float-xs-right
+          ul.nav.nav-pills
+            li.nav-item
+              a(href="/user/login")#sign-up-button.btn.btn-sm.btn-outline-danger Sign in
+            li.nav-item
+              a(href="/user/new")#sign-up-button.btn.btn-sm.btn-outline-danger Sign up
   hr.hr-separator

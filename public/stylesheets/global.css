@@ -14,36 +14,22 @@ a:-webkit-any-link {
 	color: inherit;
 }
 
+
+
 .hr-separator {
 	border-color: #FD7E95;
 	opacity: 0.5;
 	margin: 0;
+	padding-bottom: 15px;
 }
 .icon-bar { background-color: #FD7E95; }
 /** * GLOBAL CSS **/
 
+.max-width-350 { max-width: 350px; }
+
 /** * HEADER CSS * **/
 .header-design .navbar-form > * { margin-right: 5px; }
-
-#sign-in-button, #sign-in-button:visited {
-	border-color: #FD7E95;
-	background-color: #FD7E95;
-}
-#sign-in-button:hover, #sign-in-button:focus {
-	border-color: #FB4969;
-	background-color: #FB4969;
-}
-
-#sign-up-button, #sign-up-button:visited {
-	color: white;
-	border-color: rgba(255, 0, 0, 0);
-	background-color: rgba(255, 0, 0, 0.65);
-}
-#sign-up-button:hover, #sign-up-button:focus {
-	border-color: rgba(255, 0, 0, 0);
-	background-color: rgba(255, 0, 0, 0.75);
-}
-
+#header { margin-bottom: 20px; }
 /** * /HEADER CSS * **/
 
 /** * FOOTER CSS * **/
