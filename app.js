@@ -14,6 +14,7 @@ var session = require("express-session")({
     resave: true,
     saveUninitialized: true
 });
+var bcrypt = require('bcryptjs');
 var routes = require('./routes/routes');
 
 var app = express();
