@@ -3,7 +3,8 @@ var router = express.Router();
 
 // midleware checking if user is log
 function checkAuth(req, res, next) {
-    if (!req.session.user_id) {
+	console.log(req.session);
+    if ( req.session.user_id != 1 ) {
       req.checkAuth = false;
       next();
     } else {

@@ -16,13 +16,13 @@ var session = require("express-session")({
 });
 var bcrypt = require('bcryptjs');
 var routes = require('./routes/routes');
-var geoip = require('geoip-lite');
-var ip = require('ip');
+// var geoip = require('geoip-lite');
+// var ip = require('ip');
 
 var app = express();
 
-var geo = geoip.lookup(ip.address());
-console.log(geo); //Because the ip address is invalid.
+//var geo = geoip.lookup(ip.address());
+//console.log(geo); //Because the ip address is invalid.
 
 // view engine setup
 app.set('view engine', 'pug');

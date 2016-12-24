@@ -47,9 +47,10 @@ exports.register = function( req, res) {
           else {
             res.status(200).render('user/success', { 
               title: 'Successful registration',
-              authorized: req.checkAuth,
+              authorized: false,
               msg: 'Good Job !',
-              msg_detailed: 'Your account have been successfully registered, you must validate your email now.'
+              msg_detailed: 'Your account have been successfully registered, you must validate your email now.',
+              script: 'window.setTimeout(function(){ window.location.href = window.location.origin + "/user/login"; }, 3000);'
             });
           }
         });
@@ -62,8 +63,6 @@ exports.login = function( req, res) {
   var user = req.body;
   var error = [];
 
-  console.log(user);
-
   error.push( vld.isValidEmail(user.email) );
   if( vld.isValidPassword(user.password) )
     error.push( vld.isValidPassword(user.password) );
@@ -72,8 +71,6 @@ exports.login = function( req, res) {
   if( error.length == 0 )
   {
     var row = dbuser.select.validAccount(user, function( rows ) {
-
-      console.log(rows);
 
       if( rows === -1 )
         error.push("An error occured please try again");
@@ -89,14 +86,19 @@ exports.login = function( req, res) {
         });
       }
       else {
+        req.session.user_id = rows[0].id;
+        req.session.user_email = rows[0].email;
+        req.session.user_username = rows[0].username;
+        req.session.user_genrer = rows[0].gender;
+
         res.status(200).render('user/success', { 
           title: 'Successful Login',
           authorized: req.checkAuth,
           msg: 'Good Job !',
-          msg_detailed: 'You will be redirected shortly.'
+          msg_detailed: 'You will be redirected shortly.',
+          script: 'window.setTimeout(function(){ window.location.href = window.location.origin + "/"; }, 3000);'
         });
       }
     });
-
   }
 }

@@ -9,7 +9,7 @@ block content
       p= msg
       p= msg_detailed
     div.col-xs-12
-      form(method="POST" action="/user/login")#registerForm.max-width-350.mx-auto
+      form(method="POST" action="/user/login")#loginForm.max-width-350.mx-auto
         div.form-group
           label(for="inputEmail") Email
           input(type="text" name="email")#inputEmail.inputUserValidation.form-control
@@ -22,4 +22,4 @@ block content
 
 block append javascript
   script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js')
-  script(src='/javascripts/users/new.js')
+  script(src='/javascripts/login/login.js')
