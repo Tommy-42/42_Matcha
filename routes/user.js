@@ -7,8 +7,6 @@ exports.register = function( req, res) {
   var user = req.body;
   var error = [];
 
-  console.log(user);
-
   error.push( vld.isValidUsername(user.username) );
   error.push( vld.isValidBirthdate(user.birthday) );
   error.push( (user.gender == 0 ? null : user.gender == 1 ? null : ["Error Bad Gender"]) );
