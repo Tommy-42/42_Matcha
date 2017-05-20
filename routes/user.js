@@ -64,18 +64,19 @@ exports.login = function( req, res) {
   var error = [];
 
   error.push( vld.isValidEmail(user.email) );
-  if( vld.isValidPassword(user.password) )
-    error.push( vld.isValidPassword(user.password) );
+  var validpassword = vld.isValidPassword(user.password);
+  if( validpassword )
+    error.push( validpassword );
   error = error.filter(function(v){if(v && v !== null) { return v.length > 0; }else{return false;}});
 
   if( error.length == 0 )
   {
-    var row = dbuser.select.validAccount(user, function( rows ) {
+    dbuser.select.validAccount(user, function( rows ) {
 
       if( rows === -1 )
         error.push("An error occured please try again");
-      else if ( rows === 0 )
-        error.push("Invalid Username or password");
+      else if ( typeof rows == "string" )
+        error.push(rows);
 
       if( error.length > 0 ) {
         res.status(400).render('user/login', { 
@@ -100,5 +101,42 @@ exports.login = function( req, res) {
         });
       }
     });
+  }
+}
+exports.emailvalidation = function(req, res) {
+
+  var user = req.query;
+  var error = [];
+
+  var isValidToken = vld.isValidToken(user.token_email);
+
+  if( !isValidToken )
+    error.push(isValidToken);
+  
+  error = error.filter(function(v){if(v && v !== null) { return v.length > 0; }else{return false;}});
+
+  if( error.length == 0 ) {
+
+    dbuser.update.validateEmail(user.token_email, function(rows) {
+      console.log("TOKEN: ");
+      console.log(rows);
+      if( typeof rows == "string" ) {
+        res.status(400).render('user/error', { 
+          title: 'Error Token',
+          authorized: req.checkAuth,
+          msg: 'You fcking Dumb !?',
+          msg_detailed: 'Error: ' + rows
+        });
+      }
+      else {
+        res.status(200).render('user/success', { 
+          title: 'Successful Email validation',
+          authorized: req.checkAuth,
+          msg: 'Good Job<br>Successful Email validation!',
+          msg_detailed: 'You will be redirected shortly.',
+          script: 'window.setTimeout(function(){ window.location.href = window.location.origin + "/user/login"; }, 3000);'
+        });
+      }
+    });   
   }
 }
