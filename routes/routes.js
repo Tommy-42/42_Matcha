@@ -30,4 +30,6 @@ router.get('/user/emailvalidation', checkAuth, routes.user.emailvalidation);
 router.get('/user/login', checkAuth, routes.render.user.login);
 router.post('/user/login', checkAuth, routes.user.login);
 
+router.get('/user/logout', checkAuth, routes.user.logout);
+
 module.exports = router;
