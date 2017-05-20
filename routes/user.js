@@ -103,6 +103,21 @@ exports.login = function( req, res) {
     });
   }
 }
+exports.logout = function( req, res) {
+
+  req.session.user_id = null;
+  req.session.user_email = null;
+  req.session.user_username = null;
+  req.session.user_genrer = null;
+
+  res.status(200).render('user/success', { 
+    title: 'Successful logout',
+    authorized: req.checkAuth,
+    msg: 'See you soon !',
+    msg_detailed: 'You will be redirected shortly.',
+    script: 'window.setTimeout(function(){ window.location.href = window.location.origin + "/"; }, 3000);'
+  });
+}
 exports.emailvalidation = function(req, res) {
 
   var user = req.query;
@@ -118,8 +133,7 @@ exports.emailvalidation = function(req, res) {
   if( error.length == 0 ) {
 
     dbuser.update.validateEmail(user.token_email, function(rows) {
-      console.log("TOKEN: ");
-      console.log(rows);
+
       if( typeof rows == "string" ) {
         res.status(400).render('user/error', { 
           title: 'Error Token',
