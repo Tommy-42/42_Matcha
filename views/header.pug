@@ -1,32 +1,39 @@
-nav.navbar.navbar-fixed-top.header-design
+nav.navbar.fixed-top.navbar-toggleable-sm.header-design
   div.container
-    div.navbar-header
-      button(type="button" data-toggle="collapse" data-target="#navbar-header" aria-expanded="false" aria-controls="navbar").navbar-toggler.hidden-sm-up &#9776;
-      a(href="/").navbar-brand Matcha
-    div#navbar-header.collapse.navbar-toggleable-xs
+    button(type="button" data-toggle="collapse" data-target="#navbar-header" aria-expanded="false" aria-controls="navbarCollapse").navbar-toggler.navbar-toggler-right &#9776;
+    a(href="/").navbar-brand Matcha
+    div#navbar-header.collapse.navbar-collapse
       if authorized
-        ul.nav.navbar-nav
+        ul.nav.navbar-nav.mr-auto
           li.nav-item.active
-            a(href="/" class="nav-link") Home
+            a(href="/").nav-link Home
           li.nav-item
-            a(href="/" class="nav-link") Home
+            a(href="/").nav-link Home
           li.nav-item.dropdown
             a(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false").dropdown-toggle Dropdown
               span.caret
             ul.dropdown-menu
               li.nav-item
-                a(href="/" class="nav-link") Action
+                a(href="/").nav-link Action
               li.nav-item(role="separator").divider
               li.nav-item
-                a(href="/" class="nav-link") Other Action
+                a(href="/").nav-link Other Action
               li.nav-item(role="separator").divider
               li.nav-item
-                a(href="/" class="nav-link") Something
+                a(href="/").nav-link Something
+        div.mt-2.mt-md-0
+          ul.nav.nav-pills
+            li.nav-item
+              a(href="/user/logout")#sign-up-button.btn.btn-sm.btn-outline-danger Account
+            li.nav-item
+              a(href="/user/logout")#sign-up-button.btn.btn-sm.btn-outline-danger Logout
       else
-        div.d-inline-block.float-xs-right
+        ul.nav.navbar-nav.mr-auto
+        div.mt-2.mt-md-0
           ul.nav.nav-pills
             li.nav-item
               a(href="/user/login")#sign-up-button.btn.btn-sm.btn-outline-danger Sign in
             li.nav-item
               a(href="/user/new")#sign-up-button.btn.btn-sm.btn-outline-danger Sign up
+div.container.no-paddin-left-right
   hr.hr-separator

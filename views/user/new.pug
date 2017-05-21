@@ -4,11 +4,11 @@ block append stylesheet
 
 block content
   div.row
-    div.col-xs-12.text-xs-center
+    div.col-12.text-center
       h1 Create a new account
       p= msg
       p= msg_detailed
-    div.col-xs-12
+    div.col-12
       form(method="POST" action="/user/new")#registerForm.max-width-350.mx-auto
         div.form-group
           label(for="inputUsername") Username

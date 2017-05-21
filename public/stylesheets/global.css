@@ -14,21 +14,17 @@ a:-webkit-any-link {
 	color: inherit;
 }
 
-
-
 .hr-separator {
 	border-color: #FD7E95;
 	opacity: 0.5;
 	margin: 0;
-	padding-bottom: 15px;
 }
 .icon-bar { background-color: #FD7E95; }
 /** * GLOBAL CSS **/
-
+.no-paddin-left-right { padding-right: 0px !important; padding-left: 0px;}
 .max-width-350 { max-width: 350px; }
 
 /** * HEADER CSS * **/
-.header-design .navbar-form > * { margin-right: 5px; }
 #header { margin-bottom: 20px; }
 /** * /HEADER CSS * **/
 
