@@ -144,7 +144,7 @@ exports.emailvalidation = function(req, res) {
         res.status(200).render('user/success', { 
           title: 'Successful Email validation',
           authorized: req.checkAuth,
-          msg: 'Good Job<br>Successful Email validation!',
+          msg: 'Successful Email validation!',
           msg_detailed: 'You will be redirected shortly.',
           script: 'window.setTimeout(function(){ window.location.href = window.location.origin + "/user/login"; }, 3000);'
         });
