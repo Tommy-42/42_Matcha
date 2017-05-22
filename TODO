@@ -1,0 +1,31 @@
+IV.1 Inscription et connexion
+    
+    L’application doit permettre à un utilisateur de s’inscrire, en demandant au minimum
+    une adresse email, un nom d’utilisateur, un nom, un prénom et un mot de passe un tant
+    soit peu sécurisé.
+    
+    L’utilisateur doit ensuite être capable de se connecter avec son nom d’utilisateur et
+    son mot de passe. Il doit également pouvoir recevoir un mail de réinitialisation de son
+    mot de passe en cas d’oubli, et se déconnecter en un seul clic depuis n’importe quelle
+    page du site.
+
+IV.2 Profil de l’utilisateur
+    Une fois connecté, un utilisateur doit pouvoir compléter son profil, en rajoutant
+    des informations telles que :
+        _ Son sexe.
+        _ Son orientation sexuelle.
+        _ Une bio.
+        _ Une liste d’interêts, sous la forme de tags (Ces tags doivent être réutilisables).
+        _ Des images, maximum cinq, dont une servant de photo de profil.
+    
+    A tout moment, l’utilisateur doit pouvoir modifier ces informations, ainsi que son
+    nom, son prénom et son adresse email.
+    
+    L’utilisateur doit pouvoir consulter les personnes ayant consulté son profil, ainsi
+    que les personnes qui l’ont “liké”.
+    
+    L’utilisateur doit avoir un score de popularité public
+    
+    L’utilisateur doit être géolocalisé, à l’arrondissement près. Si l’utilisateur ne veut
+    pas être géolocalisé, vous devez trouver un moyen de le géolocaliser malgré lui 2
+    L’utilisateur doit pouvoir modifier sa localisation sur son profil.
