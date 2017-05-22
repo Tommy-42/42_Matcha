@@ -30,6 +30,52 @@ $( document ).ready(function() {
           }).popover('show');
         }
         return;
+      case "firstname":
+        var error = checkName(obj.value);
+        $save.popover({
+            content: "",
+            placement: "bottom",
+            title: "",
+            html: false
+        });
+        $save.popover('dispose');
+
+        if( error.length ) {
+          var content = "";
+          $.each(error, function(key, val) {
+            content += val + '<br>';
+          });
+          $save.popover({
+            content: content,
+            placement: "bottom",
+            title: "Error",
+            html: true
+          }).popover('show');
+        }
+        return;
+      case "lastname":
+        var error = checkName(obj.value);
+        $save.popover({
+            content: "",
+            placement: "bottom",
+            title: "",
+            html: false
+        });
+        $save.popover('dispose');
+
+        if( error.length ) {
+          var content = "";
+          $.each(error, function(key, val) {
+            content += val + '<br>';
+          });
+          $save.popover({
+            content: content,
+            placement: "bottom",
+            title: "Error",
+            html: true
+          }).popover('show');
+        }
+        return;
       case "email":
         var error = checkEmail(obj.value);
         $save.popover({
@@ -188,7 +234,6 @@ function checkUsername(username) {
   var illegalChars = /\W/;
   var legalChars = /([-]|[_])/g;
   var tmp = username.replace(legalChars, '');
-  console.log(tmp);
   var error = [];
 
   if( typeof tmp == "undefined" ) {
@@ -201,6 +246,23 @@ function checkUsername(username) {
     error.push("The Username is too long (20 chars max).");
   if ( illegalChars.test(tmp) )
     error.push("The Username can only contains '-', '_', alpha-num.");
+  return error;
+}
+function checkName(name) {
+
+  var illegalChars = /\W/;
+  var error = [];
+
+  if( typeof name == "undefined" ) {
+    error.push("Incorrect name")
+    return error;
+  }
+  if( name.length < 2 )
+    error.push("The name is too short (3 chars min).");
+  else if ( name.length > 20 )
+    error.push("The name is too long (20 chars max).");
+  if ( illegalChars.test(name) )
+    error.push("The name can only contains alpha characters.");
   return error;
 }
 function checkBirthDate(date) {
