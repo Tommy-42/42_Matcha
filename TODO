@@ -1,3 +1,10 @@
+### Important
+Middleware to check authentication
+
+
+
+
+### Guide Line
 IV.1 Inscription et connexion
     
     L’application doit permettre à un utilisateur de s’inscrire, en demandant au minimum
